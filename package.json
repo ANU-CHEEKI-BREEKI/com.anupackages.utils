@@ -1,0 +1,31 @@
+{
+    "name": "com.anupackages.utils",
+    "version": "1.0.0",
+    "displayName": "ANU Utils",
+    "description": "Handy utility classes and methods",
+    "keywords": [
+      "unity3d",
+      "upm",
+      "utils",
+      "physics",
+      "math",
+      "singleton",
+      "gizmos",
+      "debug",
+      "cache"
+    ],
+    "author": {
+      "name": "ANU CHEEKI BREEKI",
+      "url": "https://github.com/ANU-CHEEKI-BREEKI"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/ANU-CHEEKI-BREEKI/com.anupackages.utils.git"
+    },
+    "license": "MIT",
+    "bugs": {
+      "url": "https://github.com/ANU-CHEEKI-BREEKI/com.anupackages.utils/issues"
+    },
+    "homepage": "https://github.com/ANU-CHEEKI-BREEKI/com.anupackages.utils#readme"
+  }
+  
