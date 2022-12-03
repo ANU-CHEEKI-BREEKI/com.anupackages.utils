@@ -5,6 +5,9 @@ using UnityEngine;
 public abstract class Singletone<T> : MonoBehaviour where T : Component
 {
     private static T _instance;
+
+    private bool _isInitialized = false;
+
     protected static T Instance
     {
         get
@@ -20,13 +23,17 @@ public abstract class Singletone<T> : MonoBehaviour where T : Component
             }
 
             if (_instance is Singletone<T> singletone && !singletone._isInitialized)
-                singletone.IntarnalInitialize();
+                singletone.InternalInitialize();
 
             return _instance;
         }
     }
 
-    private bool _isInitialized = false;
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+    private static void Init()
+    {
+        _instance = null;
+    }
 
     protected void Awake()
     {
@@ -40,10 +47,10 @@ public abstract class Singletone<T> : MonoBehaviour where T : Component
             _instance = this as T;
 
         if (_instance is Singletone<T> singletone && !singletone._isInitialized)
-            singletone.IntarnalInitialize();
+            singletone.InternalInitialize();
     }
 
-    private void IntarnalInitialize()
+    private void InternalInitialize()
     {
         _isInitialized = true;
         Initialize();
